@@ -1,8 +1,12 @@
-import { connectToDatabase } from '../db/connection';
-import User from '../db/models/User';
+import { connectToDatabase } from '../db/connection.js';
+import User from '../db/models/User.js';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
-const TOKEN_SECRET = 'your-secret-key-here'; // In production, use environment variables
+// Load environment variables
+dotenv.config();
+
+const TOKEN_SECRET = process.env.TOKEN_SECRET || 'fallback-secret-key';
 
 // User registration
 export const registerUser = async (userData) => {

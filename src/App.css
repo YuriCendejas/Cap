@@ -262,14 +262,14 @@
 /* Calendar Styles */
 .calendar-container {
   min-height: calc(100vh - 80px);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #5b81bb 0%, #6e9eec 100%);
   padding: 2rem;
 }
 
 .calendar-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  background: white;
+  background: rgb(80, 136, 195);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -283,7 +283,7 @@
 }
 
 .mbsc-schedule-header {
-  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  background: linear-gradient(135deg, #66c5ea, #e66daa) !important;
   color: white !important;
   border-radius: 10px 10px 0 0 !important;
 }
@@ -384,14 +384,14 @@
 }
 
 .calendar-section {
-  background: white;
+  background: rgb(241, 159, 195);
   border-radius: 15px;
   padding: 1.5rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .events-section {
-  background: white;
+  background: rgb(227, 139, 188);
   border-radius: 15px;
   padding: 1.5rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -421,7 +421,7 @@
   background: #f8f9fa;
   border-radius: 10px;
   padding: 1rem;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #ea66b3;
   transition: all 0.3s ease;
 }
 
@@ -444,8 +444,8 @@
 }
 
 .event-time {
-  background: #667eea;
-  color: white;
+  background: #ea66a1;
+  color: rgb(237, 129, 179);
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
   font-size: 0.8rem;
@@ -485,7 +485,7 @@
 }
 
 .custom-calendar .react-calendar__tile--active {
-  background: #667eea !important;
+  background: #f78fdf !important;
   color: white !important;
 }
 
@@ -506,13 +506,13 @@
 .event-dot {
   width: 6px;
   height: 6px;
-  background: #667eea;
+  background: #ea66b5;
   border-radius: 50%;
 }
 
 .event-count {
   font-size: 0.7rem;
-  color: #667eea;
+  color: #e9729e;
   font-weight: bold;
 }
 
@@ -584,7 +584,7 @@
   justify-content: flex-end;
   gap: 1rem;
   padding: 1.5rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #e683b2;
 }
 
 .form-group {
@@ -602,7 +602,7 @@
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #e9ecef;
+  border: 2px solid #92c8ff;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -612,7 +612,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #ea6690;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 

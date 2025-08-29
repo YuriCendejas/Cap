@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getUserProfile, verifyToken } from './services/userServiceClient';
+import { getUserProfile, verifyToken } from './services/userServiceAPI';
 import './Profile.css';
 
 function Profile() {
@@ -23,7 +23,7 @@ function Profile() {
       }
 
       // Verify token and get user ID
-      const tokenResult = verifyToken(authToken);
+      const tokenResult = await verifyToken(authToken);
       if (!tokenResult.success) {
         setError('Session expired. Please log in again.');
         localStorage.removeItem('authToken');
@@ -32,7 +32,7 @@ function Profile() {
       }
 
       // Get user profile data
-      const result = await getUserProfile(tokenResult.userId);
+      const result = await getUserProfile(authToken);
       if (!result.success) {
         setError(result.error);
         return;

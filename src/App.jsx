@@ -3,7 +3,7 @@ import "./App.css";
 import SignUp from "./signUp.jsx";
 import Profile from "./Profile.jsx";
 import Account from "./Account.jsx";
-import CalendarApp from "./calander.jsx";
+import CalendarApp from "./calendar.jsx";
 
 function App() {
   const [currentView, setCurrentView] = useState("home");

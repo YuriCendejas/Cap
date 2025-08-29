@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { updateUserProfile, verifyToken, deleteUserAccount, getUserProfile } from './services/userServiceClient';
+import { updateUserProfile, verifyToken, deleteUserAccount, getUserProfile } from './services/userServiceAPI';
 import { LogoutButton } from './logout.jsx';
 import './Account.css';
 
@@ -49,7 +49,7 @@ function Account() {
       }
 
       // Verify token and get user ID
-      const tokenResult = verifyToken(authToken);
+      const tokenResult = await verifyToken(authToken);
       if (!tokenResult.success) {
         setError('Session expired. Please log in again.');
         localStorage.removeItem('authToken');
@@ -58,7 +58,7 @@ function Account() {
       }
 
       // GET method: Fetch fresh user data from service
-      const result = await getUserProfile(tokenResult.userId);
+      const result = await getUserProfile(authToken);
       if (!result.success) {
         setError(result.error);
         return;
@@ -198,7 +198,7 @@ function Account() {
       }
 
       // Verify token and get user ID
-      const tokenResult = verifyToken(authToken);
+      const tokenResult = await verifyToken(authToken);
       if (!tokenResult.success) {
         setError('Session expired. Please log in again.');
         localStorage.removeItem('authToken');
@@ -224,7 +224,7 @@ function Account() {
         smsNotifications: formData.smsNotifications
       };
 
-      const result = await updateUserProfile(tokenResult.userId, updateData);
+      const result = await updateUserProfile(authToken, updateData);
       
       if (result.success) {
         // Update localStorage with new user data
@@ -291,14 +291,14 @@ function Account() {
       }
 
       // Verify token and get user ID
-      const tokenResult = verifyToken(authToken);
+      const tokenResult = await verifyToken(authToken);
       if (!tokenResult.success) {
         setError('Session expired. Please log in again.');
         return;
       }
 
       // DELETE method: Delete user account
-      const result = await deleteUserAccount(tokenResult.userId);
+      const result = await deleteUserAccount(authToken);
       
       if (result.success) {
         // Clear localStorage

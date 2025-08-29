@@ -268,7 +268,7 @@
 
 .profile-dark .profile-bio {
   background: #4a5568;
-  border-left-color: #3498db;
+  border-left-color: #71bbec;
 }
 
 .profile-colorful .profile-bio {
@@ -278,13 +278,13 @@
 
 .profile-minimal .profile-bio {
   background: #ffffff;
-  border: 1px solid #e9ecef;
+  border: 1px solid #a7cbef;
   border-left-color: #6c757d;
 }
 
 .profile-professional .profile-bio {
   background: #ffffff;
-  border-left-color: #2c5aa0;
+  border-left-color: #75a2e4;
 }
 
 .profile-bio h3 {
@@ -325,7 +325,7 @@
   align-items: center;
   gap: 15px;
   padding: 20px;
-  background: #f8f9fa;
+  background: #689dd3;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
@@ -340,7 +340,7 @@
 }
 
 .profile-colorful .detail-item {
-  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  background: linear-gradient(135deg, #c27d9d, #f8f9fa);
   border: 1px solid #e9ecef;
 }
 
@@ -557,7 +557,7 @@
 .theme-preview {
   text-align: center;
   padding: 20px;
-  background: #f8f9fa;
+  background: #7ab0e5;
   border-radius: 12px;
   border: 1px solid #e9ecef;
 }
@@ -635,7 +635,7 @@
   text-align: center;
   padding: 40px;
   font-size: 1.2rem;
-  color: white;
+  color: rgb(255, 119, 119);
   border-radius: 15px;
   margin: 20px;
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { registerUser, loginUser } from './services/userServiceClient';
+import { registerUser, loginUser } from './services/userServiceAPI';
 import './signUp.css';
 
 function SignUp({ onAccountCreated }) {
@@ -127,10 +127,17 @@ function SignUp({ onAccountCreated }) {
 
     try {
       if (isSignUp) {
+        // Generate username from email
+        const generateUsername = (email) => {
+          const emailPrefix = email.split('@')[0];
+          return emailPrefix.replace(/[^a-zA-Z0-9_]/g, '_');
+        };
+
         // Register new user
         const userData = {
           firstName: formData.firstName,
           lastName: formData.lastName,
+          username: generateUsername(formData.email),
           email: formData.email,
           password: formData.password,
           profilePicture: previewImage

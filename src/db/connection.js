@@ -1,6 +1,17 @@
-import mongoose from 'mongoose';
+//My MongoDB connection file ! 🫶🏼
 
-const MONGO_URI = 'mongodb+srv://yuricendejas:128373@reserve.epl3jlo.mongodb.net/reserve';
+
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
+
+const MONGO_URI = process.env.MONGO_URI;
+
+if (!MONGO_URI) {
+    throw new Error('MONGO_URI environment variable is not defined');
+}
 
 let isConnected = false;
 
@@ -11,10 +22,7 @@ export const connectToDatabase = async () => {
     }
 
     try {
-        await mongoose.connect(MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(MONGO_URI);
         
         isConnected = true;
         console.log('Connected to MongoDB successfully');
